@@ -2,13 +2,17 @@ import ImgLogo from "../../assets/logo.svg";
 
 import { Container, Content } from "./styles";
 
-export function Header() {
+interface HeaderProps {
+  handleOpenNewTransactionModal(): void;
+}
+
+export function Header({ handleOpenNewTransactionModal }: HeaderProps) {
   return (
     <Container>
       <Content>
         <img src={ImgLogo} alt="dt money" />
         
-        <button type="button">Nova Transação</button>
+        <button type="button" onClick={handleOpenNewTransactionModal}>Nova Transação</button>
       </Content>
     </Container>
   );
